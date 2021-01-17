@@ -26,3 +26,19 @@
 ### logfile
 
  <img src = "images/6.png" width=550>
+ 
+##  how to use    :-
+### complie to exe file execute
+
+* go to link 
+* https://www.github.com/jac11/keylogger_windows.git
+* downlod the code zipfile
+* unziped the file 
+* open cmd from same dir
+* make sure add python to Environment Variables
+* run this command 'python setup.py py2exe'
+* make sure the file setup.py at same dir to make compli succeeded 
+* after compli you will get the folder dist have the  exe file execute at same dir 
+* copy folder dist to USB ready to use 
+
+<img src = "images/2.png" width=350> <img src = "images/3.png" width=350>
