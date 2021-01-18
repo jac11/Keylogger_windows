@@ -46,7 +46,7 @@
 ### run exe file: -
 
 * run the exe file as normal way 
-* exe file will copy all dll file and exe file to the folder in %dataapp% 'Roaming' under the name FVHost folder 
+* program.exe  will copy all dll file and program itself to the folder in %dataapp% 'Roaming' under the name FVHost folder 
 * code will add key in the regdster this path 'Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run'  to run as startup service 
 the key name is 'vshost'
 * log file under the name 'VHost' in roaming
@@ -60,5 +60,16 @@ the key name is 'vshost'
 *  set the timer for email by second so if you set after 1 min set 60 second
 
 <img src = "images/7.png" width=350><img src = "images/8.png" width=350>
+
+## Language support :-
+* the code by default encoder is UTF-8 
+* English language 
+* UTF-8 support Unicode so can work fine with other language 
+### Recommendations:-
+* to Complie from python to exe use windows 10
+* change the name file or folder in the script path it maybe broke the code so keep the names as itis  
+## connect me :-
+* administrator@jacstory.tech
+*thank you 
 
 
