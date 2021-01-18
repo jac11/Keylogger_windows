@@ -54,9 +54,11 @@ the key name is 'vshost'
 <img src = "images/3.png" width=350>  <img src = "images/4.png" width=350>
 
 ## send email :-
-
 * keylogger will send email to your Gmail account 
 * encode your email and password bes64 and add to the  variable see the pic down blow 
 * keylogger  will do  auto decode bes64 then will send email
 *  set the timer for email by second so if you set after 1 min set 60 second
+
 <img src = "images/7.png" width=350><img src = "images/8.png" width=350>
+
+
