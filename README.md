@@ -70,7 +70,6 @@ the key name is 'vshost'
 * change the name file or folder in the script path it maybe broke the code so keep the names as itis  
 ## connect me :-
 * administrator@jacstory.tech
-
-*thank you 
+* thank you 
 
 
