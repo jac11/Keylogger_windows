@@ -42,3 +42,15 @@
 * copy folder dist to USB ready to use 
 
 <img src = "images/2.png" width=350> <img src = "images/3.png" width=350>
+
+
+### run exe file: -
+
+* run the exe file as normal way 
+* exe file will copy all dll file and exe file to the folder in %dataapp% 'Roaming' under the name FVHost folder 
+* code will add key in the regdster this path 'Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run'  to run as startup service 
+the key name is 'vshost'
+* log file under the name 'VHost' in roaming
+
+<img src = "images/4.png" width=350> <img src = "images/5.png" width=350>
+
