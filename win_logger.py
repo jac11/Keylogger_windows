@@ -129,7 +129,7 @@ print_os_name       =   'OS Name                ..........| '+str(os_name)
 print_os_re         =   'OS Release             ..........| '+str(os_release)
 print_username      =   'User Name              ..........| '+str(username)
 print_WIFI          =   '='*20+'\n'+'Wifi Information:-'+'\n'+'='*20+'\n'
-print_SSID          =   'Interface Wi-Fi       ..........| '+str(ssid1)
+print_SSID          =   'Interface Wi-Fi        ..........| '+str(ssid1)
 print_password      =   'Security key           ..........| '+str(password1)
 print2SSID          =   'Interface Wi-Fi        ..........| '+str(ssid2)
 print2password      =   'Security key           ..........| '+str(password2)
