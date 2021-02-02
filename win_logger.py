@@ -39,10 +39,10 @@ else:
          exit()
      except FileExistsError:
             pass
- '''
- to run the script as background please uncomment this lines  
- from line 46 to line 65
- '''
+'''
+to run the script as background please uncomment this lines  
+from line 46 to line 65
+'''
 #if os.path.exists(os.environ["appdata"] +'\\'+'FVHost'+os.path.basename(__file__)):
 #    pass
 #else:
