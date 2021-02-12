@@ -46,7 +46,7 @@
 ### run exe file: -
 
 * run the exe file as normal way 
-* program.exe  will copy all dll file and program itself to the folder in %dataapp% 'Roaming' under the name FVHost folder 
+* program.exe  will copy all dll file and program itself to the folder in %appdata% 'Roaming' under the name FVHost folder 
 * code will add key in the regdster this path 'Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run'  to run as startup service 
 the key name is 'vshost'
 * log file under the name 'VHost' in roaming
