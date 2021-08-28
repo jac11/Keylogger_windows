@@ -88,15 +88,11 @@ try:
        for profilelist in profiles:  
                results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', profilelist, 
                         'key=clear'],shell=True).decode('utf-8').split('\n')
-               try : 
-                    results = [result.split(":")[1][1:-1] for result in results if "Key Content" in result]
-                    with open (os.environ["appdata"]+'\\FVHost'+'\\network','a')as file_1:
-                         file_2 = file_1.write("{:<}\n{:<}".format(profilelist,results[0])+'\n')
-                    with open (os.environ["appdata"]+'\\FVHost'+'\\network','r')as file_2:
-                         file_2 =file_2.readlines()
-               except FileExistsError :
-                     with open (os.environ["appdata"]+'\\FVHost'+'\\network','w+')as file_1:
-                              file_2 = file_1.read()
+               results = [result.split(":")[1][1:-1] for result in results if "Key Content" in result]
+               with open (os.environ["appdata"]+'\\FVHost'+'\\network','a')as file_1:
+                       file_2 = file_1.write("{:<}\n{:<}".format(profilelist,results[0])+'\n')
+               with open (os.environ["appdata"]+'\\FVHost'+'\\network','r')as file_2:
+                       file_2 =file_2.readlines()
                  
       
        try:
@@ -106,7 +102,7 @@ try:
             password2   =   file_2[3]
             ssid3       =   file_2[4]
             password3   =   file_2[5]
-       except IndexError:
+       except Exception:
                   try:
                        ssid1       =   file_2[0]
                        password1   =   file_2[1]
@@ -114,7 +110,7 @@ try:
                        password2   =    file_2[3]
                        ssid3       =   'None'+'\n'
                        password3   =   'None'+'\n'
-                  except IndexError :
+                  except Exception :
                                try:
                                     ssid1      =  file_2[0]
                                     password1  =  file_2[1]
@@ -122,8 +118,13 @@ try:
                                     password2  =  'None'+'\n'
                                     ssid3      =  'None'+'\n'
                                     password3  =  'None'+'\n'
-                               except IndexError :
-                                            pass
+                               except Exception :
+                                    ssid1      =  'None'+'\n'
+                                    password1  =  'None'+'\n'
+                                    ssid2      =  'None'+'\n'
+                                    password2  =  'None'+'\n'
+                                    ssid3      =  'None'+'\n'
+                                    password3  =  'None'+'\n
 except subprocess.CalledProcessError:
            ssid1       = 'None'+'\n'
            password1   = 'None'+'\n'
