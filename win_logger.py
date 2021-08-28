@@ -92,9 +92,7 @@ try:
                with open (os.environ["appdata"]+'\\FVHost'+'\\network','a')as file_1:
                        file_2 = file_1.write("{:<}\n{:<}".format(profilelist,results[0])+'\n')
                with open (os.environ["appdata"]+'\\FVHost'+'\\network','r')as file_2:
-                       file_2 =file_2.readlines()
-                 
-      
+                       file_2 =file_2.readlines()     
        try:
             ssid1       =   file_2[0]
             password1   =   file_2[1]
@@ -102,6 +100,7 @@ try:
             password2   =   file_2[3]
             ssid3       =   file_2[4]
             password3   =   file_2[5]
+               
        except Exception:
                   try:
                        ssid1       =   file_2[0]
@@ -110,6 +109,7 @@ try:
                        password2   =    file_2[3]
                        ssid3       =   'None'+'\n'
                        password3   =   'None'+'\n'
+                    
                   except Exception :
                                try:
                                     ssid1      =  file_2[0]
@@ -117,14 +117,17 @@ try:
                                     ssid2      =  'None'+'\n'
                                     password2  =  'None'+'\n'
                                     ssid3      =  'None'+'\n'
-                                    password3  =  'None'+'\n'
+                                    password3  =  'None'+'\n'  
+                                        
                                except Exception :
-                                    ssid1      =  'None'+'\n'
-                                    password1  =  'None'+'\n'
-                                    ssid2      =  'None'+'\n'
-                                    password2  =  'None'+'\n'
-                                    ssid3      =  'None'+'\n'
-                                    password3  =  'None'+'\n
+                                   
+                                          ssid1      =  'None'+'\n'
+                                          password1  =  'None'+'\n'
+                                          ssid2      =  'None'+'\n'
+                                          password2  =  'None'+'\n'
+                                          ssid3      =  'None'+'\n'
+                                          password3  =  'None'+'\n
+                                          
 except subprocess.CalledProcessError:
            ssid1       = 'None'+'\n'
            password1   = 'None'+'\n'
