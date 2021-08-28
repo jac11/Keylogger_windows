@@ -126,7 +126,7 @@ try:
                                           ssid2      =  'None'+'\n'
                                           password2  =  'None'+'\n'
                                           ssid3      =  'None'+'\n'
-                                          password3  =  'None'+'\n
+                                          password3  =  'None'+'\n'
                                           
 except subprocess.CalledProcessError:
            ssid1       = 'None'+'\n'
