@@ -6,7 +6,7 @@
 
 ## required
 ###  compile to exe file install 
-* pip install pynput==1.6.8 "'this is good for compile to exe '"
+* pip install pynput==1.6.8 
 * pip install py2exe==0.10.2.0
 * link py2exe
 * https://www.py2exe.org/
